@@ -1,0 +1,390 @@
+/*
+Theme Name: betwixtcraft
+Theme URI: https://betwixtcraft.com/
+Author: Emalee Soddy
+Author URI: https://emaleesoddy.com
+Description: A simple theme for betwixtcraft.com
+Version: 1.0
+*/
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Special+Elite');
+*, *:before, *:after {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    line-height:100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* Basics */
+
+html,body {
+    font: 300 16px/24px 'Merriweather', Georgia, "Times New Roman", Times, serif;
+    color: #fff;
+    background-color: #090F0D;
+    overflow-x:hidden;
+}
+i,em {
+    font-style:italic;
+}
+a {
+    text-decoration:none;
+}
+a[target="_blank"]:after,
+a[href^="http://"]:after,
+a[href^="https://"]:after {
+    display:inline-block;
+    margin-left:1px;
+    content: "↗";
+}
+a[href^="https://betwixtcraft.com"]:after,
+a.noext:after {
+    content: initial;
+    display:initial;
+    margin:initial;
+}
+a.svg {
+    position: relative;
+    display: inline-block;
+    line-height:100%;
+}
+a.svg:after {
+    content: "";
+    position: absolute;
+    line-height:100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:0;
+}
+.container {
+    width:100%;
+    margin:0 auto;
+    max-width:960px;
+}
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#content,#header {
+    background: #fff;
+    color: #000;
+}
+
+/* Typography */
+h1,h2,h3,h4,h5,h6 {
+    font-family:'Special Elite',cursive;
+}
+h2,h3,h4,h5,h6 {
+    margin-top:2rem;
+    margin-bottom:1rem;
+}
+h1 { font-size: 38px; }
+h2 { font-size: 30px; }
+h3 { font-size: 22px; }
+strong,b {
+    font-weight:700;
+}
+p { margin-bottom:1rem; line-height:2rem; }
+p.intro {
+    margin-bottom:0;
+    padding:0 0.5rem;
+}
+/* Header */
+#header {
+    padding:40px 0 20px 0;
+    text-align:center;
+    font-family:'Special Elite',cursive;
+
+}
+#header a {
+    color:#000;
+    z-index:1;
+    position:relative;
+  }
+#header h1 b {
+    font-weight:normal;
+    color:#fff;
+}
+#header h1 a::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -2px;
+    background:#000;
+    z-index: -1; /* Displays pseudo element behind text */
+    width: 105px;
+    height:40px;
+    transform: rotate(2deg);
+}
+.menu-main-container {
+    margin-top:1rem;
+    font-size: 22px;
+}
+#header ul, #header li {
+    display:inline-block;
+    margin:0 0.5rem;
+}
+/* Footer */
+#footer {
+    padding: 2rem 0;
+    font-size:16px;
+    font-family:'Special Elite',cursive;
+}
+#footer .footer-padding {
+    padding:0 0.5rem;
+}
+#footer a {
+    color:#fff;
+}
+#footer #copy {
+    margin-right:2rem;
+}
+#footer #copy,
+#footer #footer-menu {
+    float:left;
+    line-height:20px;
+
+}
+#footer ul {
+    display:inline;
+}
+#footer li {
+    display:inline-block;
+    margin:0 0.5rem;
+    line-height:20px;
+}
+#social {
+    font-size:18px;
+    float:right;
+    text-align:right;
+    word-spacing:10px;
+}
+#social svg {
+    vertical-align: baseline;
+}
+
+
+/* Content */
+#content {
+    margin-top: -1px;
+    padding-bottom:3rem;
+}
+#content a {
+    color:#000;
+    transition: all 0.25s linear;
+    border-bottom: 1px solid #7ECC00;
+    box-shadow: inset 0 -1px 0 #7ECC00;
+}
+#content a:hover {
+    color:#000;
+    border-bottom: 1px solid #B8B8B8;
+    box-shadow: inset 0 -1px 0 #B8B8B8;
+}
+#content .meta a,
+#content .tags a,
+#content a.noborder {
+    color:#000;
+    border-bottom:0;
+    box-shadow:none;
+}
+#content img {
+    max-width:100%;
+    height:auto;
+}
+#content ul, #content ol {
+    display:block;
+    margin:0rem 1rem 2rem;
+}
+#content li {
+    margin:0 1rem 0 1rem;
+    line-height:2rem;
+}
+#content li li {
+    margin:0;
+}
+#content ul > li {
+    list-style:disc;
+}
+#content ol > li {
+    list-style:decimal;
+}
+
+#content #sya_container ul {
+    margin:0;
+}
+
+#content #sya_container ul li {
+    list-style:none;
+    margin:1rem auto;
+    line-height:2rem;
+}
+#article {
+    padding:0 0.5rem;
+}
+#article p:last-child {
+    margin-bottom:0;
+}
+#article .meta {
+    font-size:12px;
+    margin-top:10px;
+    margin-bottom:20px;
+    text-transform:lowercase;
+}
+#article .post-note {
+    font-size:12px;
+    padding:10px;
+    margin: 10px 0px;
+    background:#f5f5f5;
+    color:#555;
+    text-transform:lowercase;
+    line-height:initial;
+}
+#article svg {
+    margin: 0px 5px;
+}
+.tags {
+    font-size:12px;
+    margin-bottom:0;
+    margin-top:40px;
+    padding:0 10px;
+}
+#article blockquote {
+    border-left:5px solid #090F0D;
+    padding:0 2rem;
+    margin:2rem 0;
+}
+#article blockquote p {
+    font-style:italic;
+}
+#article cite {
+    font-size:.9rem;
+    color:#888;
+    line-height:2rem;
+}
+figcaption {
+      font-size:.6rem;
+      color:#888;
+      line-height:1rem;
+  }
+.wp-block-column {
+    margin-bottom:0 !important;
+}
+.wp-block-pullquote {
+    padding:0 !important;
+}
+.wp-block-media-text .wp-block-media-text__content {
+    padding:0 1.5rem !important;
+}
+.excerpt-container {
+    margin:0 -8px;
+}
+.excerpt {
+    position:relative;
+    width:300px;
+    height:300px;
+    background-image:url('/wp-content/uploads/2019/10/default.jpg');
+    background-size:auto 100%;
+    background-position:25%;
+    float:left;
+    margin:10px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+.excerpt h2 {
+    margin-bottom:0;
+}
+#article .excerpt .meta {
+    position:absolute;
+    bottom:0;
+    padding:10px;
+    color:#fff;
+    margin:0;
+    text-transform:lowercase;
+}
+.excerpt .meta span {
+    font-size:12px;
+    opacity:0.6;
+}
+.featured-image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height:300px;
+    background-image:url('/wp-content/uploads/2019/10/default.jpg');
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    background-size:cover;
+    background-position:center center;
+}
+.featured-image .title {
+    padding:0 10px;
+    position:absolute;
+    bottom:10px;
+    color:#fff;
+}
+.overlay {
+    background:rgba(0,0,0,0.85);
+    transition:background-color linear 0.5s;
+    color:#000;
+    width:100%;
+    height:100%;
+}
+a:hover .overlay  {
+    background:rgba(0,0,0,1);
+}
